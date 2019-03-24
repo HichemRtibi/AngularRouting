@@ -7,17 +7,17 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import {PostModule} from './post/post.module';
 
 
 const appRoutes: Routes = [
   {
+    path: 'about', component: AboutComponent
+  },
+  {
     path:'',redirectTo:'/posts',pathMatch:'full'
   },
 
-
-  {
-    path: 'about', component: AboutComponent
-  },
   {
     path:'**',component:PageNotFoundComponent
   },
@@ -34,6 +34,7 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    PostModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],
