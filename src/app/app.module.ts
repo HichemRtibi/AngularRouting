@@ -6,15 +6,24 @@ import {NavBarComponent} from './nav-bar/nav-bar.component';
 import {PostsComponent} from './posts/posts.component';
 import {RouterModule, Routes} from '@angular/router';
 import {AboutComponent} from './about/about.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const appRoutes: Routes = [
   {
-    path: 'posts', component: PostsComponent
+    path:'',redirectTo:'/posts',pathMatch:'full'
   },
   {
+    path: 'posts', component: PostsComponent
+  },
+
+  {
     path: 'about', component: AboutComponent
-  }
+  },
+  {
+    path:'**',component:PageNotFoundComponent
+  },
+
 ];
 
 
@@ -23,7 +32,8 @@ const appRoutes: Routes = [
     AppComponent,
     NavBarComponent,
     PostsComponent,
-    AboutComponent
+    AboutComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
