@@ -18,7 +18,9 @@ export class PostDetailComponent implements OnInit {
     private router: Router
   ) {}
   post: Post;
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this.route.snapshot.paramMap.get('id'));
+  }
   gotoPosts() {
     // this.router.navigateByUrl('/posts');
     this.router.navigate(['/posts']);
