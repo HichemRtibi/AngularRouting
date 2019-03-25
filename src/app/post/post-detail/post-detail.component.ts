@@ -22,7 +22,13 @@ export class PostDetailComponent implements OnInit {
    // console.log(this.route.snapshot.paramMap.get('id'));
 
     this.route.params.subscribe(params=>{
-      console.log(params['id']);
+     // console.log(params['id']);
+      this.postService.getPost(params['id']).subscribe(post=>{
+        this.post=post;
+        // this.postService.getPost(this.route.snapshot.paramMap.get('id')).subscribe(post=>{
+        //         this.post=post;
+        //       })
+      })
     })
   }
   gotoPosts() {

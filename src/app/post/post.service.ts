@@ -14,9 +14,9 @@ export class PostService {
   getPosts(): Observable<Post[]> {
     return of(POSTS);
   }
- /* getPost(id: number | string): any {
+  getPost(id: number | string): any {
     return this.getPosts().pipe(
       map((posts: Post[]) => posts.find(p => p.id === +id))
     );
-  }*/
+  }
 }
